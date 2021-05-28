@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import func from 'vue-editor-bridge';
 import vCarusel from "./components/v-carusel";
 
 export default {
@@ -40,6 +41,11 @@ export default {
       ],
     };
   },
+  mounted: function() {
+    setTimeout(() => {
+      document.getElementById('fe-loading').remove();
+    }, 5 * 1000)
+  }
 };
 </script>
 

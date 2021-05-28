@@ -1,7 +1,7 @@
 <template>
 <div class = car>
   
-      <button @click="prevSlide"> <img src = "@/assets/icons/left.svg"></button>
+      <button @click="prevSlide" class="fe-button"> <img src = "@/assets/icons/left.svg"></button>
   <div class="wrapper_container">
     <div class = "wrapper">
       <div class ='v-carusel' :style = "{'margin-left': '-' + (100 * currentSlideIndex) + '%' }">
@@ -14,7 +14,7 @@
         
     </div>
   </div>
-  <button @click="nextSlide"> <img src = "@/assets/icons/right.svg" ></button>
+  <button @click="nextSlide" class="fe-button"> <img src = "@/assets/icons/right.svg" ></button>
 </div>
 </template>
 

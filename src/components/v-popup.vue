@@ -1,14 +1,17 @@
 <template>
 
-    <div class = "wrap">
-        <div class = "v-popup-close">
-             <button @click="closePopup"> <img src = "@/assets/icons/close.svg" ></button>
-            </div>   
-        <div class = 'v-popup'>
-            <div class = "v-popup-img">
-                <slot></slot>
-            </div>
-        </div>
+    <div class="wrap" @click.self="closePopup">
+        <div class="v-popup-close">
+             <button @click="closePopup"> <img src="@/assets/icons/close.svg" ></button>
+        </div>   
+            <transition name="scale">
+                <div class='v-popup'>
+
+                    <div class="v-popup-img">
+                        <slot></slot>
+                    </div>
+                </div>
+            </transition>
     </div> 
 
 </template>
@@ -41,34 +44,30 @@ export default{
     top: 0;
     bottom: 0;
     z-index: 5;
-    
+
+    padding: 20px;
 }
+
 .v-popup {
-    
-    position: fixed;
+
+    width: 100%;
     max-width: 800px;
-    max-height: 550px;
-    top: 20px;
-    z-index: 5;
     overflow: hidden auto;
-   width: 100%;
-   height: 100%;
-   
     box-shadow: 0 0 17px 0 #252424;
-.v-popup_close{
-        display: flex;
-        justify-content: end;
-        align-items: end;
-        text-align: end  !important;
-        top: 3vh;
-        right: 3vh;
-    }
-    &_img{
-        display:flex;
-        justify-content: center;
-        align-items: center;
+}
+
+.v-popup-close{
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    
+    
+    // &_img{
+    //     display:flex;
+    //     justify-content: center;
+    //     align-items: center;
        
-    }
+    // }
 }
 .v-popup::-webkit-scrollbar {
   width: 8px;               /* ширина scrollbar */
@@ -81,5 +80,16 @@ export default{
   border-radius: 20px;       /* закругления плашки */
   border: 3px solid var( --gold-dark);  /* padding вокруг плашки */
 }
+
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 7s ease-in-out;
+}
+
+.scale-enter,
+.scale-leave-to {
+    transform: scale(.3);
+}
+
 
 </style>

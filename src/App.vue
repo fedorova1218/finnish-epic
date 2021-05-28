@@ -143,6 +143,7 @@ body {
 
 .down h3 {
   font-family: "Oswald", sans-serif;
+  letter-spacing: 0.2em;
   color: rgba(35, 36, 20, 0);
   animation: text-down 3s 1;
   animation-delay: 4s;

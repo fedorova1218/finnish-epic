@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import func from 'vue-editor-bridge';
+
 import vCarusel from "./components/v-carusel";
 
 export default {
@@ -41,16 +41,17 @@ export default {
       ],
     };
   },
-  mounted: function() {
+  /*mounted: function() {
     setTimeout(() => {
-      document.getElementById('fe-loading').remove();
+      // document.getElementById('fe-loading').remove();
     }, 5 * 1000)
-  }
+  } */
 };
 </script>
 
 
 <style lang="scss">
+
 :root {
   --bg-color: #0f0f0e;
   --primary-color: #af8d51;

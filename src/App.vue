@@ -1,8 +1,11 @@
 <template>
   <div class="background">
+    <audio id="music" src="../public/audio/Finnish_Folk_Music.mp3" crossOrigin="anonymous">
+    </audio>
     <div class="container">
       <img src="@/assets/icons/question_dark.svg" class="fe-button" />
-      <img src="@/assets/icons/sound_on_dark.svg" class="volume fe-button" />
+      <button @click="playAudio" class="fe-button"> <img :src="require('@/assets/icons/' + VolImg)" id="ChangeImg" /></button>
+      
     </div>
     <div class="section_first">
       <h1 class="animate__animated animate__zoomIn">Финский эпос</h1>
@@ -39,13 +42,25 @@ export default {
         { id: 2, name: "snake", img: "Snake_card.jpg", img_info: "Snake.jpeg" },
         { id: 3, name: "img3", img: "witch_card2.jpg", img_info: "witch.jpg" },
       ],
+      MusicIndex: 0,
+      VolImg : 'sound_on_dark.svg'
     };
   },
-  /*mounted: function() {
-    setTimeout(() => {
-      // document.getElementById('fe-loading').remove();
-    }, 5 * 1000)
-  } */
+  methods: {
+    playAudio() {
+      if (this.MusicIndex == 0) 
+      {
+        document.getElementById('music').play();
+        this.VolImg = 'sound_on_dark.svg';
+        this.MusicIndex = 1;
+      }
+      else  {
+        document.getElementById('music').pause();
+        this.VolImg = 'sound_off_dark.png';
+        this.MusicIndex = 0;
+      }
+    }
+  }
 };
 </script>
 

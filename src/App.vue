@@ -1,5 +1,5 @@
 <template>
-
+  <div class="close">
   <div class="background">
     <audio id="music" src="../public/audio/Finnish_Folk_Music.mp3" crossOrigin="anonymous" loop></audio>
      
@@ -27,6 +27,7 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -51,7 +52,7 @@ export default {
       ],
       MusicIndex: 0,
       VolImg : 'sound_off_dark.png',
-      result : confirm('Включить музыку?')
+      result : alert('Если Вы хотите проникнуться атмосферой сказка, не забудьте включить музыку)')
     };
   },
   methods: {
@@ -97,6 +98,8 @@ html {
   scroll-behavior: smooth;
   min-width: 1260px;
 }
+
+
 
 body {
   background-image: url(assets/main-back.png);

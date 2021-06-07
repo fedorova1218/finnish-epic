@@ -54,6 +54,7 @@ export default{
     max-width: 800px;
     overflow: hidden auto;
     box-shadow: 0 0 17px 0 #252424;
+    border-radius: 40px;
 }
 
 .v-popup-close{
@@ -79,6 +80,7 @@ export default{
   background-color: var( --primary-color);    /* цвет плашки */
   border-radius: 20px;       /* закругления плашки */
   border: 3px solid var( --gold-dark);  /* padding вокруг плашки */
+  
 }
 
 .scale-enter-active,

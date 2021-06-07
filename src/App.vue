@@ -1,8 +1,9 @@
 <template>
+
   <div class="background">
-    <audio id="music" src="../public/audio/Finnish_Folk_Music.mp3" crossOrigin="anonymous" loop>
-    </audio>
-    <div class="container">
+    <audio id="music" src="../public/audio/Finnish_Folk_Music.mp3" crossOrigin="anonymous" loop></audio>
+     
+    <div class="container"  >
      
       <button @click="playAudio" class="fe-button"> <img :src="require('@/assets/icons/' + VolImg)" id="ChangeImg" /></button>
       
@@ -21,7 +22,8 @@
         <div id="app">
           <v-carusel :carusel_data="sliderItems" />
         </div>
-        <h3 id="copy">© Финский эпос. Гурина Софья(@i_am_watching_anime), Федорова Анастасия(@F_Nas_Tea) 2021</h3>
+        <h3 class="copy">© Финский эпос. Гурина Софья, Федорова Анастасия 2021</h3>
+        <p class="copy down_text">Присоединяйся к нашей группе и следи за обновлениями <a href="https://t.me/joinchat/FxY_XUl8x2c4OTgy">finnish-epic</a></p>
       </div>
     </div>
   </div>
@@ -31,20 +33,25 @@
 
 import vCarusel from "./components/v-carusel";
 
+ 
 export default {
   name: "app",
   components: {
     vCarusel,
   },
+  mounted() {
+    this.answerCon()
+  },
   data() {
     return {
       sliderItems: [
-        { id: 1, name: "witch", img: "witch_card.png", img_info: "witch.jpg" },
-        { id: 2, name: "snake", img: "Snake_card.jpg", img_info: "Snake.jpeg" },
-        { id: 3, name: "nightmare", img: "nightmare_card.png", img_info: "nightmare.jpeg" },
+        { id: 1, name: "witch", img: "witch_card.png", img_info: "witch_text.jpg" },
+        { id: 2, name: "snake", img: "Snake_card.jpg", img_info: "Snake_text.jpg" },
+        { id: 3, name: "nightmare", img: "nightmare_card.png", img_info: "nightmare_text.jpg" },
       ],
       MusicIndex: 0,
-      VolImg : 'sound_off_dark.png'
+      VolImg : 'sound_off_dark.png',
+      result : confirm('Включить музыку?')
     };
   },
   methods: {
@@ -60,7 +67,17 @@ export default {
         this.VolImg = 'sound_off_dark.png';
         this.MusicIndex = 0;
       }
+    },
+  answerCon() {
+    if (this.result) {
+      this.MusicIndex = 0;
+      this.playAudio();
+    } else {
+      this.MusicIndex = 1;
+      this.playAudio();
     }
+  },
+
   }
 };
 </script>
@@ -222,9 +239,23 @@ body {
   scroll-margin-block-end: inherit;
 }
 
-#copy {
+.copy {
   margin-left: 5vh;
   font-family: Oswald;
   text-align: start;
+  margin: 5px;
 }
+
+.down_text {
+  padding-bottom: 10px;
+}
+A {
+ color: var(--gold-dark); /* Цвет ссылок */
+  }
+A:visited {
+  color: #fdca72; /* Цвет посещенных ссылок */
+  }
+A:active {
+  color: #4d5736; /* Цвет активных ссылок */
+  }
 </style>

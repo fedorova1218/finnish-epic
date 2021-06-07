@@ -39,9 +39,9 @@ export default {
   data() {
     return {
       sliderItems: [
-        { id: 1, name: "witch", img: "witch_card.jpg", img_info: "witch.jpg" },
+        { id: 1, name: "witch", img: "witch_card.png", img_info: "witch.jpg" },
         { id: 2, name: "snake", img: "Snake_card.jpg", img_info: "Snake.jpeg" },
-        { id: 3, name: "img3", img: "witch_card2.jpg", img_info: "witch.jpg" },
+        { id: 3, name: "nightmare", img: "nightmare_card.png", img_info: "nightmare.jpeg" },
       ],
       MusicIndex: 0,
       VolImg : 'sound_off_dark.png'
@@ -69,7 +69,7 @@ export default {
 <style lang="scss">
 
 :root {
-  --bg-color: #0f0f0e;
+  --bg-color: #121209;
   --primary-color: #af8d51;
   --text-color: #af8d51;
   --gold-dark: #60502f;
@@ -90,6 +90,7 @@ body {
   object-fit: cover;
   margin: 0;
   user-select: none;
+  letter-spacing: 0.4em;
 }
 
 .fe-button {

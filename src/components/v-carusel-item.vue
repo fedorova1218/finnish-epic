@@ -56,7 +56,7 @@ export default {
   height: 446px;
   filter: drop-shadow(8px 8px 15px rgba(0, 0, 0, 0.25));
   border-radius: 20px;
-  margin: 5vh;
+  margin: 25px;
   transition: all 0.4s;
   animation-timing-function: ease-in-out;
 }

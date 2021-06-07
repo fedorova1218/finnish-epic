@@ -4,7 +4,7 @@
       <button @click="prevSlide" class="fe-button"> <img src = "@/assets/icons/left.svg"></button>
   <div class="wrapper_container">
     <div class = "wrapper">
-      <div class ='v-carusel' :style = "{'margin-left': '-' + (100 * currentSlideIndex) + '%' }">
+      <div class ='v-carusel' :style = "{'margin-left': '-' + (310 * currentSlideIndex) + 'px' }">
         <v-carusel-item
           v-for="item in carusel_data"
           :key="item.id"
@@ -85,7 +85,7 @@ button img {
   display: flex;
   flex-direction: row;
   
-  margin: 10vh;
+  margin: 5vh;
   height: auto;
   width: auto;
   

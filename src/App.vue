@@ -1,9 +1,9 @@
 <template>
   <div class="background">
-    <audio id="music" src="../public/audio/Finnish_Folk_Music.mp3" crossOrigin="anonymous">
+    <audio id="music" src="../public/audio/Finnish_Folk_Music.mp3" crossOrigin="anonymous" loop>
     </audio>
     <div class="container">
-      <img src="@/assets/icons/question_dark.svg" class="fe-button" />
+     
       <button @click="playAudio" class="fe-button"> <img :src="require('@/assets/icons/' + VolImg)" id="ChangeImg" /></button>
       
     </div>
@@ -21,6 +21,7 @@
         <div id="app">
           <v-carusel :carusel_data="sliderItems" />
         </div>
+        <h3 id="copy">© Финский эпос. Гурина Софья(@i_am_watching_anime), Федорова Анастасия(@F_Nas_Tea) 2021</h3>
       </div>
     </div>
   </div>
@@ -43,7 +44,7 @@ export default {
         { id: 3, name: "img3", img: "witch_card2.jpg", img_info: "witch.jpg" },
       ],
       MusicIndex: 0,
-      VolImg : 'sound_on_dark.svg'
+      VolImg : 'sound_off_dark.png'
     };
   },
   methods: {
@@ -77,6 +78,7 @@ export default {
 
 html {
   scroll-behavior: smooth;
+  min-width: 1260px;
 }
 
 body {
@@ -101,6 +103,7 @@ body {
   text-align: center;
   color: #2c3e50;
   margin-top: 50vh;
+  letter-spacing: 0.2em;
 }
 
 .background {
@@ -143,6 +146,7 @@ body {
   animation: text-info 3s 1;
   animation-delay: 3s;
   animation-fill-mode: forwards;
+  letter-spacing: 0.2em;
 }
 
 .section_first h1 {
@@ -215,5 +219,11 @@ body {
 .section_main {
   margin-top: 85vh;
   scroll-margin-block-end: inherit;
+}
+
+#copy {
+  margin-left: 5vh;
+  font-family: Oswald;
+  text-align: start;
 }
 </style>

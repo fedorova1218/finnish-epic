@@ -5,7 +5,7 @@
      
     <div class="container"  >
      
-      <button @click="playAudio" class="fe-button"> <img :src="require('@/assets/icons/' + VolImg)" id="ChangeImg" /></button>
+      <button @click="playAudio" class="fe-button ChangeImg"> <img :src="require('@/assets/icons/' + VolImg)" id="ChangeImg" /></button>
       
     </div>
     <div class="section_first">
@@ -14,7 +14,7 @@
       <div class="down">
         <h3>Листайте вниз для продолжения</h3>
         <a href="#creatures" class="arrow fe-button">
-          <img src="@/assets/icons/down.svg" />
+          <img src="@/assets/icons/down.svg" class="ChangeImg"/>
         </a>
       </div>
 
@@ -180,6 +180,11 @@ body {
   animation: Appearance 3s 1;
   animation-duration: 13s;
   animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+  transition: 1s;
+}
+
+.arrow:hover {
+  transform: scale(1.2);
 }
 
 .down {
@@ -195,6 +200,14 @@ body {
   animation-delay: 4s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
+}
+
+.ChangeImg {
+  transition: 0.5s;
+}
+
+.ChangeImg:hover {
+  transform: scale(1.2);
 }
 
 .animate__animated.animate__zoomIn {

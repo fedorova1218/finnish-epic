@@ -23,10 +23,17 @@
           <v-carusel :carusel_data="sliderItems" />
         </div>
         <h3 class="copy">© Финский эпос. Гурина Софья, Федорова Анастасия 2021</h3>
-        <p class="copy down_text">Присоединяйся к нашей группе и следи за обновлениями <a href="https://t.me/joinchat/FxY_XUl8x2c4OTgy">finnish-epic</a></p>
+        <div class = "copy sub">
+        <p class = "down-text">Присоединяйся </p>
+          <a  href="https://t.me/joinchat/FxY_XUl8x2c4OTgy"><img class="tel" src="@/assets/sub/telegram.png" alt="Telegram"></a>
+          <a class="lisa" href="http://lisa.bmstu.ru/"><img class="lisa" src="http://lisa.bmstu.ru/img/LISA-stroke.png" alt="LISA"></a>
+        
+        </div>
       </div>
     </div>
   </div>
+ 
+ 
   </div>
 </template>
 
@@ -52,7 +59,8 @@ export default {
       ],
       MusicIndex: 0,
       VolImg : 'sound_off_dark.png',
-      result : alert('Если Вы хотите проникнуться атмосферой сказка, не забудьте включить музыку)')
+      adap : alert('Пользуйтесь компьютером для корректного отображения картинок'),
+      result : alert('Если Вы хотите проникнуться атмосферой сказки, не забудьте включить музыку:)')
     };
   },
   methods: {
@@ -112,6 +120,7 @@ body {
   user-select: none;
   letter-spacing: 0.4em;
 }
+
 
 .fe-button {
   cursor: pointer;
@@ -262,16 +271,32 @@ body {
   margin: 5px;
 }
 
-.down_text {
-  padding-bottom: 10px;
+
+.sub {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
-A {
- color: var(--gold-dark); /* Цвет ссылок */
-  }
-A:visited {
-  color: #fdca72; /* Цвет посещенных ссылок */
-  }
-A:active {
-  color: #4d5736; /* Цвет активных ссылок */
-  }
+
+.down-text {
+  padding-bottom: 10px;
+  align-items: center;
+  padding-right: 15px;
+}
+
+.tel {
+  width: 30px;
+  height: 30px;
+  padding: 15px;
+  align-items: center;
+}
+
+.lisa {
+  width: 60px;
+  height: 25px;
+  padding: 8px;
+  align-items: center;
+}
+
+
 </style>
